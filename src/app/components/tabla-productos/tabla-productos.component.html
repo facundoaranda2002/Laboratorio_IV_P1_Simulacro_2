@@ -1,0 +1,28 @@
+<div class="row">
+    <table >
+        <thead>
+          <tr>
+            <th>Descripcion</th>
+            <th *ngIf="mostrarPublicos">Codigo</th>
+            <th *ngIf="mostrarPublicos">Precio</th>
+            <th *ngIf="mostrarPublicos">Stock</th>
+            <th *ngIf="mostrarPublicos">Comestible</th>
+            <th *ngIf="mostrarPublicos">Pais</th>
+            <th *ngIf="mostrarSeleccionar">Seleccionar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productos">
+            <td>{{ producto.descripcion }}</td>
+            <td *ngIf="mostrarPublicos">{{ producto.codigo }}</td>
+            <td *ngIf="mostrarPublicos">{{ producto.precio }}</td>
+            <td *ngIf="mostrarPublicos">{{ producto.stock }}</td>
+            <td *ngIf="mostrarPublicos">{{ producto.comestible }}</td>
+            <td *ngIf="mostrarPublicos">{{ producto.pais?.nombre }}</td>
+            <td *ngIf="mostrarSeleccionar">
+                <button (click)="seleccionar(producto)" class="btn btn-primary">X</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,29 @@
+<div class="row">
+    <table >
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Color</th>
+            <th>Empresa</th>
+            <th>Capacidad</th>
+            <th *ngIf="mostrarSeleccionar">Seleccionar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let container of containeres">
+            <td>{{ container.codigo }}</td>
+            <td>{{ container.color }}</td>
+            <td >{{ container.empresa }}</td>
+            <td >{{ container.capacidad }}</td>
+            <!--<td >{{ repartidor.edad }}</td>
+            <td >{{ repartidor.unidadPropia }}</td>
+            <td>
+              <img [src]="pelicula.fotoPelicula" alt="{{ pelicula.nombre }}" width="100">
+            </td>-->
+            <td *ngIf="mostrarSeleccionar">
+                <button (click)="seleccionar(container)" class="btn btn-primary">X</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>

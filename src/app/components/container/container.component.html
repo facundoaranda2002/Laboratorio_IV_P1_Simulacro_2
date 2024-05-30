@@ -1,0 +1,51 @@
+<div class="row">
+
+    <div class="container py-3">
+        <header>
+      
+          <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal">Container</h1>
+            <app-tabla-container #tablaContainer (eventContainerSeleccionada)="mostrar($event)"></app-tabla-container>
+          </div>
+        </header>
+      
+        <main>
+          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Alta</h4>
+                </div>
+                <div class="card-body">
+                    <app-alta-container #inputAlta (actualizar)="actualizarLista()"></app-alta-container>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Baja</h4>
+                </div>
+                <div class="card-body">
+                    <app-baja-container #inputBaja [container]="containerSeleccionada" (actualizar)="actualizarLista()"></app-baja-container>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Modificacion</h4>
+                </div>
+                <div class="card-body">
+                    <app-modificar-container #inputModificar [container]="containerSeleccionada" (actualizar)="actualizarLista()"></app-modificar-container>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          
+        </main>
+
+      </div>
+</div>
+  

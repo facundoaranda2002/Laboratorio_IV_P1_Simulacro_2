@@ -1,0 +1,17 @@
+<div class="pelicula-detalle-container scroll-container" *ngIf="pais?.nombre">
+    <h2>Información de {{pais?.nombre}}</h2>
+    <p><strong>Nombre Oficial:</strong> {{pais?.informacion.name.official}}</p>
+    <p><strong>Nombre Común:</strong> {{pais?.informacion.name.common}}</p>
+    <p><strong>País Independiente:</strong> {{pais?.informacion.independent ? 'Sí' : 'No'}}</p>
+    <p><strong>Región:</strong> {{pais?.informacion.region}}</p>
+    <p><strong>Subregión:</strong> {{pais?.informacion.subregion}}</p>
+    <p><strong>Idioma Oficial:</strong> {{pais?.informacion.languages.eng}}</p>
+    <p><strong>Capital:</strong> {{pais?.informacion.capital[0]}}</p>
+    <p><strong>Bandera:</strong> {{pais?.informacion.flag}}</p>
+    <p><strong>Google Maps:</strong> <a href="{{pais?.informacion.maps.googleMaps}}">{{pais?.nombre}} en Google Maps</a></p>
+    <p><strong>Población:</strong> {{pais?.informacion.population}}</p>
+    <p><strong>Zona Horaria:</strong> {{pais?.informacion.timezones[0]}}</p>
+    <p><strong>Continente:</strong> {{pais?.informacion.continents[0]}}</p>
+    <p><strong>Enlaces a Mapas:</strong> <a href="{{pais?.informacion.maps.openStreetMaps}}">OpenStreetMap</a></p>
+    <img src="{{pais?.bandera}}" alt="Bandera de {{pais?.nombre}}">
+  </div>

@@ -1,0 +1,26 @@
+<form [formGroup]="formContainer">
+
+    <label for="ingredientes">Color:</label>
+    <input type="text" id="color" formControlName="color" name="color" required>
+    <div *ngIf="formContainer.controls['color'].errors?.['required'] && formContainer.controls['color'].touched"  style="color: red;">
+        Color es requerido
+    </div>
+
+    <label for="precio">Empresa:</label>
+    <input type="text" id="empresa" formControlName="empresa" name="empresa" required>
+    <div *ngIf="formContainer.controls['empresa'].errors?.['required'] && formContainer.controls['empresa'].touched"  style="color: red;">
+        Empresa es requerido
+    </div>
+
+    
+    <label for="precio">Capacidad:</label>
+    <input type="number" id="capacidad" formControlName="capacidad" name="capacidad" required>
+    <div *ngIf="formContainer.controls['capacidad'].errors?.['required'] && formContainer.controls['capacidad'].touched"  style="color: red;">
+        Capacidad es requerido
+    </div>
+
+
+</form>
+<br>
+
+<button type="button" class="w-100 btn btn-lg btn-outline-primary" (click)="modificar()">Modificar</button>

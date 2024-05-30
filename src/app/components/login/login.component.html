@@ -1,0 +1,21 @@
+<body class="text-center">
+    <form class="form-signin" [formGroup]="formLogin">
+      <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+      <label for="inputEmail" class="sr-only">Correo</label>
+
+      <input type="email" id="inputEmail" class="form-control" placeholder="Correo" required autofocus formControlName="usuario" name="usuario">
+      <label *ngIf="formLogin.controls['usuario'].errors?.['required'] && formLogin.controls['usuario'].touched" style="color: red;">
+        Usuario es requerido
+      </label>
+      <label for="inputPassword" class="sr-only">Contraseña</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required formControlName="clave" name="clave">
+      <div *ngIf="formLogin.controls['clave'].errors?.['required'] && formLogin.controls['clave'].touched" style="color: red;">
+        Clave es requerido
+      </div>
+        <br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="formLogin.invalid" (click)="ingresar()">Ingresar</button>
+      <button class="btn btn-lg btn-secondary btn-block" type="submit" (click)="admin()">Admin</button>
+      <button class="btn btn-lg btn-warning btn-block" type="submit" (click)="empleado()">Empleado</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2024</p>
+    </form>
+  </body>

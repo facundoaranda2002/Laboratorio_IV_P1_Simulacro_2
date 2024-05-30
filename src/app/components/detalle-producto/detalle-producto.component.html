@@ -1,0 +1,9 @@
+
+<div class="pelicula-detalle-container" *ngIf="producto?.descripcion">
+    <p>Codigo:{{ producto?.codigo }}</p>
+    <p>Pais: {{ producto?.pais?.nombre }}</p>
+    <p>Descripcion: {{ producto?.descripcion  }}</p>
+    <p>Precio: {{ producto?.precio }}</p>
+    <p>Stock: {{ producto?.stock }}</p>
+    <p>Comestible: {{ producto?.comestible }}</p>
+  </div>

@@ -1,0 +1,90 @@
+
+  <body class="bg-light">
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-8 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Tabla paises</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed" >
+              <app-tabla-paises  (eventPaisSeleccionado)="cargarPais($event)" [mostrarSeleccionar]="true" [cargarPaises]="true"></app-tabla-paises>
+            </li>
+          </ul>
+        </div>
+        <!--,(código, descripción , precio , stock, país de origen,comestible (true o false)).-->
+        <div class="col-md-4 order-md-1">
+          <h4 class="mb-3">Alta producto</h4>
+          <form class="needs-validation" novalidate [formGroup]="formProducto">
+            
+            <div class="mb-3">
+                <label for="username">Codigo</label>
+                <div *ngIf="formProducto.controls['codigo'].errors?.['required'] && formProducto.controls['codigo'].touched"  style="color: red;">
+                  Codigo es requerido
+                  </div>
+                <div class="input-group">
+                  <input type="number" class="form-control" placeholder="Codigo" formControlName="codigo" name="codigo">
+                </div>
+              </div>
+
+            <div class="mb-3">
+                <label for="username">Descripcion</label>
+                <div *ngIf="formProducto.controls['descripcion'].errors?.['required'] && formProducto.controls['descripcion'].touched"  style="color: red;">
+                  Descripcion es requerido
+                  </div>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Descripcion" formControlName="descripcion" name="descripcion">
+                </div>
+              </div>
+
+            <div class="mb-3">
+              <label for="username">Precio</label>
+              <div *ngIf="formProducto.controls['precio'].errors?.['required'] && formProducto.controls['precio'].touched"  style="color: red;">
+                Precio es requerido
+            </div>
+              <div class="input-group">
+                <input type="number" class="form-control" placeholder="Precio" formControlName="precio" name="precio">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Stock</label>
+              <div *ngIf="formProducto.controls['stock'].errors?.['required'] && formProducto.controls['stock'].touched"  style="color: red;">
+                Stock es requerido
+              </div>
+              <input type="number" class="form-control" placeholder="Stock" formControlName="stock" name="stock">
+            </div>
+
+
+            <div class="mb-3">
+                <label for="unidadPropia">Comestible</label>
+                <div *ngIf="formProducto.controls['comestible'].errors?.['required'] && formProducto.controls['comestible'].touched"  style="color: red;">
+                  Comestible es requerido
+                  </div>
+                <select class="form-control" formControlName="comestible" name="comestible">
+                    <option value="true" selected>True</option>
+                    <option value="false">False</option>
+                </select>
+            </div>
+
+    
+            <div class="mb-3">
+            <label for="country">Pais</label>
+            <div *ngIf="formProducto.controls['pais'].errors?.['required'] && formProducto.controls['pais'].touched"  style="color: red;">
+                Pais es requerido
+                </div>
+            <input class="custom-select d-block w-100" id="country" required readonly formControlName="pais" name="pais">
+            </div>
+
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="registrarProducto()">Registrar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+
